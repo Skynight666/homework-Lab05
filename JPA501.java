@@ -4,16 +4,19 @@ public class JPA501 {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Input n (1>=n>=16):");
-        int n = scanner.nextInt();
-        int count =1;
+            int n = scanner.nextInt();
             if (n==999) {
                 break;
-            } else {
-                for (int i = 1; i <= n; i++) {
-                    count *= i;
-                }
+            } else{
+            System.out.printf(n + "的乘階= %d\n",fac(n));
             }
-            System.out.println(n + "的乘階= "+count);
-        } 
+        }
+    }
+    public static int fac(int n) {
+        if (n==0){
+            return 1;
+        } else {
+            return n*fac(n-1);
+        }
     }
 }
